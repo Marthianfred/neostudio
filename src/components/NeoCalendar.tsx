@@ -7,23 +7,23 @@ export function NeoCalendar() {
 
   const events = useMemo(
     () => ({
-      LUNES: [
+      "LUNES": [
         { time: "16H", title: "Derecho Constitucional" },
         { time: "18H", title: "Derechos Humanos" },
       ],
-      MARTES: [
+      "MARTES": [
         { time: "16H", title: "Inglés" },
         { time: "18H", title: "Inglés" },
       ],
-      MIERCOLES: [
+      "MIÉRCOLES": [
         { time: "16H", title: "Derecho Constitucional" },
         { time: "18H", title: "Derechos Humanos" },
       ],
-      JUEVES: [
+      "JUEVES": [
         { time: "16H", title: "Inglés" },
         { time: "18H", title: "Inglés" },
       ],
-      VIERNES: [
+      "VIERNES": [
         { time: "16H", title: "Derecho Constitucional" },
         { time: "18H", title: "Derechos Humanos" },
       ],
@@ -41,7 +41,7 @@ export function NeoCalendar() {
               {day}
             </h3>
             <div className="space-y-4">
-              {events[day as keyof typeof events].map((event, index) => (
+              {events[day].map((event, index) => (
                 <div
                   key={index}
                   className="cyber-card p-4 text-center hover:scale-105 transition-transform"
