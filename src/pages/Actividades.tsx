@@ -20,9 +20,11 @@ const Actividades = () => {
 
       <main className="pt-20 pb-8 px-4 lg:pl-72">
         <div className="container mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-8 neon-text">Actividades</h1>
-          <div className="cyber-card p-6">
-            <p className="text-neon-cyan">Contenido de Actividades próximamente...</p>
+          <div className="clip-path-hex-corners bg-black/30 backdrop-blur-sm border border-neon-cyan/30 p-8">
+            <h1 className="text-4xl font-bold text-center mb-8 neon-text">Actividades</h1>
+            <div className="cyber-card p-6">
+              <p className="text-neon-cyan">Contenido de Actividades próximamente...</p>
+            </div>
           </div>
         </div>
       </main>
