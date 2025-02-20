@@ -1,8 +1,7 @@
-
 import { ReactNode, useState } from "react";
-import { NeoHeader } from "./NeoHeader";
-import { NeoSidebar } from "./NeoSidebar";
-import Fondo from "../../public/Fondo.png";
+import { NeoHeader } from "@/components/NeoHeader";
+import { NeoSidebar } from "@/components/NeoSidebar";
+import Fondo from "~/images/Fondo.png";
 
 interface NeoLayoutProps {
   children: ReactNode;
@@ -16,7 +15,7 @@ export function NeoLayout({ children }: NeoLayoutProps) {
 
   return (
     <div
-      className="min-h-screen bg-background bg-cover text-foreground"
+      className={"min-h-screen bg-background bg-cover text-foreground"}
       style={{ backgroundImage: `url(${Fondo})` }}
     >
       <NeoHeader onMenuClick={toggleSidebar} />
