@@ -1,4 +1,3 @@
-
 import { useMemo } from "react";
 
 export function NeoCalendar() {
@@ -7,23 +6,23 @@ export function NeoCalendar() {
 
   const events = useMemo(
     () => ({
-      "LUNES": [
+      LUNES: [
         { time: "16H", title: "Derecho Constitucional" },
         { time: "18H", title: "Derechos Humanos" },
       ],
-      "MARTES": [
+      MARTES: [
         { time: "16H", title: "Inglés" },
         { time: "18H", title: "Inglés" },
       ],
-      "MIÉRCOLES": [
+      MIÉRCOLES: [
         { time: "16H", title: "Derecho Constitucional" },
         { time: "18H", title: "Derechos Humanos" },
       ],
-      "JUEVES": [
+      JUEVES: [
         { time: "16H", title: "Inglés" },
         { time: "18H", title: "Inglés" },
       ],
-      "VIERNES": [
+      VIERNES: [
         { time: "16H", title: "Derecho Constitucional" },
         { time: "18H", title: "Derechos Humanos" },
       ],
@@ -33,10 +32,12 @@ export function NeoCalendar() {
 
   return (
     <div className="p-8">
-      <h2 className="text-4xl font-bold text-center mb-8 neon-text">NOVIEMBRE</h2>
+      <h2 className="text-4xl font-bold text-center mb-8 neon-text">
+        NOVIEMBRE
+      </h2>
       <div className="grid grid-cols-5 gap-4">
         {weekDays.map((day) => (
-          <div key={day} className="space-y-4">
+          <div key={day} className="space-y-4 cursor-pointer">
             <h3 className="text-center text-lg font-semibold text-neon-cyan mb-4">
               {day}
             </h3>
