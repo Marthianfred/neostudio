@@ -1,12 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from "react";
+import { NeoSidebar } from "@/components/NeoSidebar";
+import { NeoHeader } from "@/components/NeoHeader";
+import { NeoCalendar } from "@/components/NeoCalendar";
 
 const Index = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
+      <NeoHeader onMenuClick={toggleSidebar} />
+      <NeoSidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+      
+      <main className="pt-20 pb-8 px-4">
+        <div className="container mx-auto">
+          <NeoCalendar />
+        </div>
+      </main>
     </div>
   );
 };
