@@ -1,4 +1,11 @@
 import { NeoLayout } from "@/components/NeoLayout";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 const Actividades = () => {
   return (
@@ -8,9 +15,15 @@ const Actividades = () => {
           Actividades
         </h1>
         <div className="clip-path-hex-corners grow bg-black/30 backdrop-blur-sm border border-neon-cyan/30 p-8">
-          <p className="text-neon-cyan">
-            Contenido de Actividades próximamente...
-          </p>
+          <Carousel className="h-full">
+            <CarouselContent className="h-full">
+              <CarouselItem className="h-full">Slide 1</CarouselItem>
+              <CarouselItem className="h-full">Slide 2</CarouselItem>
+              <CarouselItem className="h-full">Slide 3</CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </NeoLayout>
