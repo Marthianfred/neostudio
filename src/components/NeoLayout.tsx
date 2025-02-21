@@ -15,14 +15,14 @@ export function NeoLayout({ children }: NeoLayoutProps) {
 
   return (
     <div
-      className={"min-h-screen bg-background bg-cover text-foreground"}
+      className={"h-screen bg-background bg-cover text-foreground"}
       style={{ backgroundImage: `url(${Fondo})` }}
     >
       <NeoHeader onMenuClick={toggleSidebar} />
       <NeoSidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
-      <main className="pt-20 pb-8 px-4 lg:pl-72">
-        <div className="container mx-auto">
+      <main className="pt-20 pb-8 px-0 md:px-4 lg:pl-72 w-full h-full">
+        <div className="container mx-auto w-full h-full flex items-center">
           {children}
         </div>
       </main>

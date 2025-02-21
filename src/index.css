@@ -1,95 +1,137 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 195 100% 5%;
-    --foreground: 180 100% 99%;
+    :root {
+        --background: 195 100% 5%;
+        --foreground: 180 100% 99%;
 
-    --card: 195 100% 5%;
-    --card-foreground: 180 100% 99%;
+        --card: 195 100% 5%;
+        --card-foreground: 180 100% 99%;
 
-    --popover: 195 100% 5%;
-    --popover-foreground: 180 100% 99%;
+        --popover: 195 100% 5%;
+        --popover-foreground: 180 100% 99%;
 
-    --primary: 180 100% 50%;
-    --primary-foreground: 195 100% 5%;
+        --primary: 180 100% 50%;
+        --primary-foreground: 195 100% 5%;
 
-    --secondary: 195 100% 10%;
-    --secondary-foreground: 180 100% 99%;
+        --secondary: 195 100% 10%;
+        --secondary-foreground: 180 100% 99%;
 
-    --muted: 195 100% 10%;
-    --muted-foreground: 180 70% 90%;
+        --muted: 195 100% 10%;
+        --muted-foreground: 180 70% 90%;
 
-    --accent: 180 100% 45%;
-    --accent-foreground: 195 100% 5%;
+        --accent: 180 100% 45%;
+        --accent-foreground: 195 100% 5%;
 
-    --destructive: 0 100% 40%;
-    --destructive-foreground: 180 100% 99%;
+        --destructive: 0 100% 40%;
+        --destructive-foreground: 180 100% 99%;
 
-    --border: 180 100% 40%;
-    --input: 180 100% 40%;
-    --ring: 180 100% 50%;
+        --border: 180 100% 40%;
+        --input: 180 100% 40%;
+        --ring: 180 100% 50%;
 
-    --radius: 0.5rem;
-  }
+        --radius: 0.5rem;
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground overflow-x-hidden;
-    background-image: radial-gradient(
-      circle at center,
-      rgba(0, 255, 255, 0.1) 0%,
-      rgba(0, 0, 0, 0.9) 100%
-    );
-  }
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground overflow-x-hidden;
+        background-image: radial-gradient(
+                circle at center,
+                rgba(0, 255, 255, 0.1) 0%,
+                rgba(0, 0, 0, 0.9) 100%
+        );
+    }
+}
+
+.react-calendar__tile.hidden {
+    display: none;
 }
 
 @layer components {
-  .cyber-card {
-    @apply relative bg-black/30 backdrop-blur-sm border border-neon-cyan/30 rounded-lg 
-           shadow-neon hover:shadow-neon-lg transition-all duration-300
-           before:absolute before:inset-0 before:bg-gradient-to-r 
-           before:from-transparent before:via-neon-cyan/10 before:to-transparent
-           before:opacity-0 before:hover:opacity-100 before:transition-opacity;
-  }
+    .cyber-card {
+        @apply bg-black/30 backdrop-blur
+        border border-neon-cyan/30 rounded-xl
+        hover:shadow-neon transition-all duration-300
+        before:absolute before:inset-0 before:bg-gradient-to-r
+        before:from-transparent before:via-neon-cyan/10 before:to-transparent
+        before:opacity-0 before:hover:opacity-100 before:transition-opacity;
+    }
 
-  .cyber-button {
-    @apply relative px-6 py-2 bg-transparent border border-neon-cyan/50
-           text-neon-cyan rounded hover:bg-neon-cyan/10
-           shadow-neon hover:shadow-neon-lg
-           transition-all duration-300 hover:scale-105;
-  }
+    .cyber-border-4 {
+        @apply relative bg-black/30 backdrop-blur rounded-xl
+        hover:shadow-neon transition-all duration-300
+        before:absolute before:inset-0 before:bg-gradient-to-r
+        before:from-transparent before:via-neon-cyan/10 before:to-transparent
+        before:opacity-0 before:hover:opacity-100 before:transition-opacity;
+    }
 
-  .neon-text {
-    @apply text-neon-cyan drop-shadow-[0_0_2px_#0ff];
-  }
+    #top-right {
+        top: 0;
+        right: 0;
+        border-radius: 0 12px 0 0;
+        border-top: 2px solid rgb(0 255 255 / 0.3);
+        border-right: 2px solid rgb(0 255 255 / 0.3);
+    }
 
-  .clip-path-hex {
-    clip-path: polygon(
-      0 0,
-      calc(100% - 20px) 0,
-      100% 20px,
-      100% calc(100% - 20px),
-      calc(100% - 20px) 100%,
-      0 100%
-    );
-  }
+    #bottom-left {
+        bottom: 0;
+        left: 0;
+        border-radius: 0 0 0 12px;
+        border-bottom: 2px solid rgb(0 255 255 / 0.3);
+        border-left: 2px solid rgb(0 255 255 / 0.3);
+    }
 
-  .clip-path-hex-corners {
-    clip-path: polygon(
-      0 20px,
-      20px 0,
-      100% 0,
-      100% calc(100% - 20px),
-      calc(100% - 20px) 100%,
-      0 100%
-    );
-  }
+
+    .cyber-button {
+        @apply relative px-6 py-2 bg-transparent border border-neon-cyan/50
+        text-neon-cyan rounded hover:bg-neon-cyan/10
+        shadow-neon hover:shadow-neon-lg
+        transition-all duration-300 hover:scale-105;
+    }
+
+    .neon-text {
+        @apply text-neon-cyan drop-shadow-[0_0_2px_#0ff];
+    }
+
+    .clip-path-hex {
+        clip-path: polygon(
+                0 0,
+                calc(100% - 20px) 0,
+                100% 20px,
+                100% calc(100% - 20px),
+                calc(100% - 20px) 100%,
+                0 100%
+        );
+    }
+
+    .clip-path-hex-corners {
+        clip-path: polygon(
+                0 20px,
+                20px 0,
+                100% 0,
+                100% calc(100% - 20px),
+                calc(100% - 20px) 100%,
+                0 100%
+        );
+    }
+
+    .clip-path-hex-corners-large {
+        clip-path: polygon(
+                0 0,
+                95% 0,
+                100% 8%,
+                100% 100%,
+                0 100%,
+                0 0
+        );
+    }
 }
+
