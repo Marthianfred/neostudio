@@ -23,7 +23,6 @@ export function NeoCalendar() {
     }, [fetchSchedule, currentMonth]);
 
     const getMonthDays = (month: number, year: number) => {
-        const firstDay = new Date(year, month - 1, 1);
         const lastDay = new Date(year, month, 0);
         const daysInMonth = [];
 
@@ -70,7 +69,7 @@ export function NeoCalendar() {
         <div className="p-0 md:p-8">
 
             <h2 className="text-4xl font-bold text-center mb-8 neon-text">
-                {`${new Date().toLocaleString("es-ES", {month: "long"}).toUpperCase()} ${currentYear}`}
+                {`${new Date().toLocaleString("es-ES", {month: "long"}).toUpperCase()}`}
             </h2>
             <div className="container cyber-card clip-path-hex-corners-large py-10">
                 <div className="grid grid-cols-5">
@@ -92,12 +91,12 @@ export function NeoCalendar() {
                                         const eventsForTheDay = events[day]?.filter(e => new Date(e.date).toISOString().split('T')[0] === formattedDate);
 
                                         return (
-                                            <>
-                                                <div key={index}
-                                                     className={cn(
-                                                         "cyber-border-4 p-4 text-center hover:scale-105",
-                                                         "transition-transform h-36 max-w-xs w-full"
-                                                     )}>
+                                            <div key={index}>
+                                                <div
+                                                    className={cn(
+                                                        "cyber-border-4 p-4 text-center hover:scale-105",
+                                                        "transition-transform h-36 max-w-xs w-full"
+                                                    )}>
                                                     <div id="top-right" className="absolute h-[50%] w-[50%]"></div>
                                                     <div id="bottom-left" className="absolute h-[50%] w-[50%]"></div>
                                                     <p className="text-white text-sm">{date.getDate()}</p>
@@ -120,8 +119,7 @@ export function NeoCalendar() {
                                                             evento</p>
                                                     )}
                                                 </div>
-                                            </>
-
+                                            </div>
                                         );
                                     }
                                     return null;

@@ -36,6 +36,8 @@
     }
 }
 
+
+
 @layer base {
     * {
         @apply border-border;
@@ -49,10 +51,6 @@
                 rgba(0, 0, 0, 0.9) 100%
         );
     }
-}
-
-.react-calendar__tile.hidden {
-    display: none;
 }
 
 @layer components {
@@ -98,7 +96,7 @@
     }
 
     .neon-text {
-        @apply text-neon-cyan drop-shadow-[0_0_2px_#0ff];
+        @apply text-neon-cyan drop-shadow-[0_0_2px_#0ff] font-striker;
     }
 
     .clip-path-hex {
@@ -135,3 +133,10 @@
     }
 }
 
+@font-face {
+    font-family: 'Striker-NeoStudio';
+    src: url('./font/Striker.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: auto;
+}

@@ -90,6 +90,9 @@ export default {
       backgroundImage: {
         "cyber-pattern": "url('/lovable-uploads/3c0b145f-8667-4a74-89c9-7afbeb3f6b08.png')",
       },
+      fontFamily: {
+        "striker": ["Striker-NeoStudio", "Tahoma"]
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

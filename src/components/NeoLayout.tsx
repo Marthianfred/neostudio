@@ -15,7 +15,7 @@ export function NeoLayout({ children }: NeoLayoutProps) {
 
   return (
     <div
-      className={"h-screen bg-background bg-cover text-foreground"}
+      className={"h-screen bg-background bg-cover text-foreground font-striker"}
       style={{ backgroundImage: `url(${Fondo})` }}
     >
       <NeoHeader onMenuClick={toggleSidebar} />
